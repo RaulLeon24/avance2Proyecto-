@@ -85,7 +85,30 @@ def p_numero(p):
         '''
 
 
+#Avance Raul Leon
 
+def p_statement_if(p):
+    'statement : IF  expression  LLLAVE statements RLLAVE'
+    
+
+def p_statement_if_else(p):
+    'statement : IF  expression  LLLAVE statements RLLAVE ELSE LLLAVE statements RLLAVE'
+
+def p_expression(p):
+    '''expression : expression EQUALS expression
+                  | NUMBER'''
+
+def p_statements(p):
+    'statements : statements statement'
+
+
+def p_statements_single(p):
+    'statements : statement'
+
+
+# Definición de Estructura de Datos Slices
+def p_slice(p):
+    'p_slice : ID LCORCHETE RCORCHETE ID'
 
 
 def p_error(p):
