@@ -124,22 +124,7 @@ lexer = lex.lex()
 
 #Testeando
 data = '''
-        package main
 
-import (
-    "fmt"
-    "math"
-)
-
-func calcularAreaCirculo(radio float64) float64 {
-    return math.Pi * math.Pow(radio, 2)
-}
-
-func main() {
-    radio := 5.0
-    area := calcularAreaCirculo(radio)
-    fmt.Printf("El área del círculo con radio %.2f es %.2f\n", radio, area)
-}
       '''
 
 #Datos de entrada

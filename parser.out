@@ -1,1 +1,119 @@
 Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    CADENA
+    CASE
+    COMPARE
+    DIVIDE
+    EQUALSVAR
+    MAIN
+    MAYORQUE
+    MINUS
+    PALABRA
+    PERIOD
+    PRINTF
+    STR
+    SWITCH
+    TIMES
+    WHILE
+    XCENTAJE
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> package_decl import_decl func_decl
+Rule 2     package_decl -> PACKAGE IDENTIFIER SEMICOLON
+Rule 3     import_decl -> IMPORT import_spec
+Rule 4     funcion -> FUNC campo LPAREN RPAREN tipoDato LLLAVE cuerpo RLLAVE
+Rule 5     campo -> ID
+Rule 6     tipoDato -> INT
+Rule 7     cuerpo -> repetirLineas RETURN ID
+Rule 8     repetirLineas -> linea
+Rule 9     repetirLineas -> linea repetirLineas
+Rule 10    linea -> ID EQUALS expresion
+Rule 11    expresion -> ID
+Rule 12    expresion -> INT
+Rule 13    linea -> ID EQUALS ID
+Rule 14    for -> FOR ID EQUALS INT PUNTOCOMA ID MENORQUE LEN LPAREN ID RPAREN PUNTOCOMA ID PLUS PLUS LLLAVE cuerpo RLLAVE
+Rule 15    arreglo -> ID LCORCHETE INT RCORCHETE tipoDato LLLAVE elemArray RLLAVE
+Rule 16    elemArray -> numero
+Rule 17    elemArray -> numero COMMA elemArray
+Rule 18    numero -> INT
+Rule 19    numero -> FLOAT
+Rule 20    statement -> IF expression LLLAVE statements RLLAVE
+Rule 21    statement -> IF expression LLLAVE statements RLLAVE ELSE LLLAVE statements RLLAVE
+Rule 22    expression -> expression EQUALS expression
+Rule 23    expression -> NUMBER
+Rule 24    statements -> statements statement
+Rule 25    statements -> statement
+Rule 26    p_slice -> ID LCORCHETE RCORCHETE ID
+
+Terminals, with rules where they appear
+
+CADENA               : 
+CASE                 : 
+COMMA                : 17
+COMPARE              : 
+DIVIDE               : 
+EQUALS               : 10 13 14 22
+EQUALSVAR            : 
+FLOAT                : 19
+FOR                  : 14
+FUNC                 : 4
+ID                   : 5 7 10 11 13 13 14 14 14 14 15 26 26
+IF                   : 20 21
+INT                  : 6 12 14 15 18
+LCORCHETE            : 15 26
+LEN                  : 14
+LLLAVE               : 4 14 15 20 21 21
+LPAREN               : 4 14
+MAIN                 : 
+MAYORQUE             : 
+MENORQUE             : 14
+MINUS                : 
+PACKAGE              : 2
+PALABRA              : 
+PERIOD               : 
+PLUS                 : 14 14
+PRINTF               : 
+PUNTOCOMA            : 14 14
+RCORCHETE            : 15 26
+RETURN               : 7
+RLLAVE               : 4 14 15 20 21 21
+RPAREN               : 4 14
+STR                  : 
+SWITCH               : 
+TIMES                : 
+WHILE                : 
+XCENTAJE             : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+ELSE                 : 21
+IDENTIFIER           : 2
+IMPORT               : 3
+NUMBER               : 23
+SEMICOLON            : 2
+arreglo              : 
+campo                : 4
+cuerpo               : 4 14
+elemArray            : 15 17
+expresion            : 10
+expression           : 20 21 22 22
+for                  : 
+func_decl            : 1
+funcion              : 
+import_decl          : 1
+import_spec          : 3
+linea                : 8 9
+numero               : 16 17
+p_slice              : 
+package_decl         : 1
+program              : 0
+repetirLineas        : 7 9
+statement            : 24 25
+statements           : 20 21 21 24
+tipoDato             : 4 15
+
